@@ -14,12 +14,12 @@ public class Routes extends RouteBuilder {
                 .transform(constant("Merci pour votre message!"))
                 .to("telegram:bots");
 
-        from("kafka:toto")
+        /*from("kafka:toto")
                 .log("Incoming from kafka ${body}")
                 .unmarshal().json(TelegramMessage.class)
                 .bean("telegramBean", "generateNotification")
                 .log("${body}")
-                .to("slack:#myslack");
+                .to("slack:#myslack");*/
 
     }
 }
