@@ -1,4 +1,4 @@
-// camel-k: config=secret:s3-secret
+// camel-k: language=groovy config=secret:s3-secret
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -15,8 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import org.apache.camel.builder.RouteBuilder;
-
 from('aws2-s3:{{aws-s3.bucket-name}}?delay=1500')
         .log('${body}')
         .to('knative:channel/feedback');
